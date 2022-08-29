@@ -1,16 +1,41 @@
 
+import sqlite3
 from tkinter import*
 from tkinter import ttk
 from PIL import Image,ImageTk #PIp install pillow
 
+nom = StringVar()
+prenom = StringVar()
+contact = StringVar()
+montant_ciffre = IntVar()
+montant_lettre = StringVar()
+centre_de_control = StringVar()
+
+
+
+
+
 
 class Login:
+   
+    
     def __init__(self,root): 
         self.root=root
         self.root.title("Formulaire")
         self.root.geometry("1350x700+0+0") 
         self.root.config(bg="black")
-
+         #Connexion à la base de donnée
+        def database():
+            nom =L_name.get() 
+            prenom = f_name.get()
+            contact = contact.get()
+            montant_ciffre = montant_ciffre.get()
+            montant_lettre = montant_lettre.get()
+            centre_de_control = centre_de_control.get()
+            conn = sqlite3.connect("form.db")
+            with conn:
+                cursor=conn.cursor()
+                cursor.execute("CREATE IF NOT EXISTS")
        
         #===Left image===
         self.left=ImageTk.PhotoImage(file="image/compta.jpg")  
@@ -68,17 +93,6 @@ class Login:
 
        
 
-
-
-
-
-
-
-ht=40
-
-
-
-     
 root=Tk()
 obj=Login(root)
 root.mainloop()
