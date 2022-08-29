@@ -9,12 +9,9 @@ class Login:
         self.root=root
         self.root.title("Formulaire")
         self.root.geometry("1350x700+0+0") 
-        self.root.config(bg="white")
+        self.root.config(bg="black")
 
-        #===Bg Image===
-        self.bg=ImageTk.PhotoImage(file="image/compa2.jpg")  
-        bg=Label(self.root,image=self.bg).place(x=250,y=0,relwidth=1,relheight=1)
-
+       
         #===Left image===
         self.left=ImageTk.PhotoImage(file="image/compta.jpg")  
         left=Label(self.root,image=self.left).place(x=80,y=100,width=400,height=500)
@@ -69,9 +66,7 @@ class Login:
         bnt_valider=Button(frame1,text="Valider",font=("goudy old style",15,"bold"),
         bg="#0b5377",fg="white", cursor="hand2").place(x=50, y=420, width=240,height=40)
 
-        bnt_button=Button(self.root,text="Sign in",font=("goudy old style",20,"bold"),
-        bg="#0b5377",fg="white",bd=0 ,cursor="hand2").place(x=200, y=480, width=150 )
-
+       
 
 
 
